@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Future.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/UI/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Assets/player-life.png" type="Texture" id=3]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "Score:"
+
+[node name="livesTexture" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 39.0
+margin_right = 38.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2

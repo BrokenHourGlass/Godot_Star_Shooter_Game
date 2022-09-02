@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/kenvector_future.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Future.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/UI/MainMenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 314.0
+margin_right = 604.0
+margin_bottom = 386.0
+custom_fonts/font = SubResource( 1 )
+text = "STAR SHOOTER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -48.5
+margin_right = 88.5
+margin_bottom = 48.5
+custom_constants/separation = 20
+
+[node name="start" type="Button" parent="VBoxContainer"]
+margin_right = 177.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 177.0
+margin_bottom = 113.0
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
